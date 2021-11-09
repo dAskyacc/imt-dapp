@@ -104,12 +104,12 @@ async function connectEthereum() {
     const chainId = await ethereum.request({ method: 'eth_chainId' })
     return chainId
   } catch (e) {
-    console.debug(e)
     let errorTitle = 'Connect Wallet Fail.'
     if (e.code) {
       errorTitle += '[' + e.code + ']'
       showErrorModal(e.message || e, errorTitle)
     }
+    console.debug(e)
   }
 }
 
@@ -128,8 +128,8 @@ async function initDappState() {
       await getBalanceDomHandler(selectedAddress)
     }
   } catch (err) {
-    console.error(err)
     showErrorModal(err.message || err.toString(), 'DApp initailized fail.')
+    console.error(err)
   }
 }
 
