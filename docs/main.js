@@ -2,6 +2,8 @@ $(async function () {
   // Bind Dom init Event
   bindErrorModalCloseEvent()
 
+  checkLocalStorage()
+
   const detectProvider = detectPocketType()
 
   if (
@@ -214,15 +216,32 @@ function fillWalletBalance(balanceValt) {
   document.querySelector('#tokenBalance').innerText = balanceValt || '--'
 }
 
-function showErrorModal(errMsg, errTitle = 'Error') {
+function showErrorModal(errMsg, errTitle) {
   $('#errorModal').addClass('is-active')
 
-  $('#errorMessage').innerText =
+  $('#errorMessage').text(
     typeof errMsg === 'string'
       ? errMsg
       : typeof errMsg.toString === 'function'
       ? errMsg.toString()
       : '' + errMsg
+  )
 
-  $('#errorTitle').innerText = errMsg
+  $('#errorTitle').text(errTitle || 'Error')
+}
+
+function checkLocalStorage() {
+  if (!!window.localStorage && typeof localStorage.setItem === 'function') {
+    $('#checkStorageLabel')
+      .removeClass('has-text-danger')
+      .parent()
+      .addClass('has-text-success')
+    $('#checkStorageLabel').text('OK')
+  } else {
+    $('#checkStorageLabel').text('Unsupport LocalStorage')
+    $('#checkStorageLabel')
+      .parent()
+      .removeClass('has-text-success')
+      .addClass('has-text-danger')
+  }
 }
