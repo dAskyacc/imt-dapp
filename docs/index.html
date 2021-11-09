@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>IMToken Dapp</title>
+    <link rel="stylesheet" href="vendors/css/bulma/bulma.min.css" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="vendors/js/web3.min.js"></script>
+    <script src="vendors/js/detect-provider.min.js"></script>
+    <script src="vendors/js/jquery.min.js"></script>
+    <script src="utils/index.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div id="root" class="container">
+      <section class="hero">
+        <div class="hero-body">
+          <p class="title">DApp DEMO</p>
+          <p class="subtitle">imToken Test</p>
+        </div>
+      </section>
+      <!-- Main Content -->
+      <section class="section">
+        <div class="card imt-card">
+          <div class="card-header">
+            <div class="card-header-title">
+              <span>APP Enviroment</span>
+              <span class="provider-type"></span>
+            </div>
+            <div class="card-header-icon" id="pocketIconContainer"></div>
+          </div>
+          <!-- Footer -->
+          <div class="card-content">
+            <div class="columns">
+              <div class="column ">
+                <label class="imt-label"> Network: </label>
+                <span id="currentChainName" class="imt-valt selected-address">
+                  --
+                </span>
+              </div>
+              <div class="column">
+                <label class="imt-label">Account: </label>
+                <span id="selectedAddress" class="imt-valt selected-address">
+                  --
+                </span>
+              </div>
+            </div>
+
+            <div class="columns">
+              <div class="column">
+                <label class="imt-label">Balance: </label>
+                <span class="imt-valt token-balance" id="tokenBalance">--</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="card-footer">
+            <a href="#" class="card-footer-item" id="connectBtn"
+              >Connect Wallet</a
+            >
+            <a href="#" class="card-footer-item" id="getBalanceBtn"
+              >Get Balance</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Error Modal -->
+      <div class="modal" id="errorModal">
+        <div class="modal-background"></div>
+        <div class="card imt-modal-content">
+          <div class="error-title">
+            <h5 id="errorTitle">
+              <!-- Error Title -->
+            </h5>
+          </div>
+          <div class="error-message">
+            <p id="errorMessage">
+              <!-- Error Message -->
+            </p>
+          </div>
+        </div>
+        <button
+          class="modal-close imt-modal-close is-large"
+          aria-label="close"
+          id="errorModalCloseBtn"
+        ></button>
+      </div>
+    </div>
+  </body>
+</html>

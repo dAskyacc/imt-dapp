@@ -1,0 +1,7 @@
+# EsLint ignore config
+
+build/*
+dist/*
+config/*
+!config/index.js
+docs/vendors

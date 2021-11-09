@@ -1,0 +1,40 @@
+img.pocket-icon {
+  width: 32px;
+  height: 32px;
+}
+label.imt-label {
+  color: #a9a9a9;
+}
+span.imt-valt {
+  margin-left: 0.5em;
+}
+
+span.imt-valt.selected-address {
+  font-size: 0.75rem;
+  color: #4169e1;
+  word-break: break-all;
+}
+
+div.imt-modal-content {
+  width: calc(100% - 80px);
+  max-width: 600px;
+}
+
+div.imt-modal-content.card {
+  padding: 12px 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+div.imt-modal-content > .error-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ff4500;
+}
+
+div.imt-modal-content > .error-message > p {
+  word-break: break-all;
+  color: #ff7f50;
+}
