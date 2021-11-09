@@ -153,7 +153,7 @@ async function getSelectedAddress() {
     throw new Error('No Ethereum in Enviroment.')
   }
 
-  const accounts = await ethereum.request({ method: 'eth_accounts' })
+  const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
   return accounts && accounts.length ? accounts[0] : ''
 }
 
